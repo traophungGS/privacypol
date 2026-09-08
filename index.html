@@ -1,0 +1,479 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="hosting-provider" content="Netlify">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — EzraAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #1a1a1a;
+    --soft:    #4a4a4a;
+    --muted:   #888;
+    --line:    #e8e4df;
+    --bg:      #faf8f5;
+    --white:   #ffffff;
+    --accent:  #2d5a3d;
+    --serif:   'Fraunces', Georgia, serif;
+    --sans:    'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 0 48px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .brand span { color: var(--accent); }
+  .toplinks { display: flex; gap: 32px; }
+  .toplinks a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color .2s;
+  }
+  .toplinks a:hover, .toplinks a.active { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    border-bottom: 1px solid var(--line);
+    padding: 72px 48px 60px;
+    background: var(--white);
+  }
+  .hero-inner { max-width: 720px; }
+  .doc-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-meta {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta span::before {
+    content: '—';
+    margin-right: 8px;
+    color: var(--line);
+  }
+
+  /* ── LAYOUT ── */
+  .layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 84px;
+  }
+  .sidebar-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .toc { list-style: none; }
+  .toc li { margin-bottom: 2px; }
+  .toc a {
+    font-size: 13px;
+    color: var(--soft);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0 6px 14px;
+    border-left: 2px solid transparent;
+    transition: all .15s;
+    line-height: 1.4;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+
+  /* ── CONTENT ── */
+  .content section {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .content section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .sec-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 28px 0 10px;
+  }
+  p { color: var(--soft); margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  li {
+    color: var(--soft);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  li:last-child { border-bottom: none; }
+  li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .callout {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .callout p { margin: 0; font-size: 14px; }
+
+  a { color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 48px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-copy {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .footer-copy strong { color: var(--ink); font-weight: 500; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media(max-width: 768px) {
+    .topbar { padding: 0 20px; }
+    .hero { padding: 48px 20px 40px; }
+    .layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
+    .sidebar { position: static; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class='brand' href='/'>Ezra<span>AI</span></a>
+  <nav class="toplinks">
+    <a class='active' href='/privacy-policy'>Privacy</a>
+    <a href='/terms-of-service'>Terms</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="doc-label">Legal Document</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="hero-meta">
+      <span>Effective: January 1, 2025</span>
+      <span>Last updated: June 2026</span>
+      <span>EzraAI Discord Bot</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-label">Contents</div>
+    <ul class="toc">
+      <li><a href="#s1">1. Introduction</a></li>
+      <li><a href="#s2">2. Data We Collect</a></li>
+      <li><a href="#s2b">2b. Encryption</a></li>
+      <li><a href="#s3">3. How We Use Data</a></li>
+      <li><a href="#s4">4. Data Storage</a></li>
+      <li><a href="#s5">5. Third Parties</a></li>
+      <li><a href="#s6">6. Data Retention</a></li>
+      <li><a href="#s7">7. Your Rights</a></li>
+      <li><a href="#s8">8. Children's Privacy</a></li>
+      <li><a href="#s9">9. Changes</a></li>
+      <li><a href="#s10">10. Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="s1">
+      <div class="sec-num">Section 01</div>
+      <h2>Introduction</h2>
+      <p>EzraAI ("we", "our", or "the Bot") is a Discord bot that provides AI conversation, economy, leveling, and utility features to Discord servers. This Privacy Policy explains what information we collect, why we collect it, and how it is used when you interact with EzraAI.</p>
+      <p>By using EzraAI in any Discord server, you acknowledge and agree to the data practices described in this document. If you do not agree, you may request removal of your data at any time as described in Section 7.</p>
+      <div class="callout">
+        <p>We only collect data that is necessary for the bot to function. We do not sell, trade, or rent your personal information to third parties. As of June 2026, sensitive personal data (conversation history, memory) is protected with AES-256-GCM end-to-end encryption at rest.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <div class="sec-num">Section 02</div>
+      <h2>Data We Collect</h2>
+      <p>EzraAI automatically collects certain information when you interact with the bot. This includes:</p>
+
+      <h3>User Data</h3>
+      <ul>
+        <li>Your Discord User ID (a unique numerical identifier assigned by Discord)</li>
+        <li>Your Discord username at time of interaction (for display purposes)</li>
+        <li>Experience points (XP), level, coins, and economy balances earned through bot activity</li>
+        <li>Daily streak data and activity timestamps</li>
+        <li>Vote timestamps from top.gg if you choose to vote for the bot</li>
+        <li>Badges and achievements earned through bot usage</li>
+        <li>AI conversation memory and history — <strong>encrypted at rest with AES-256-GCM</strong></li>
+        <li>Referral codes and referral activity if you use the referral system</li>
+        <li>Premium status and tier if you have an active premium subscription</li>
+        <li>Warning history issued by server administrators</li>
+        <li>Any reminders you set through the bot</li>
+        <li>Sentiment history used for wellbeing features — <strong>encrypted at rest with AES-256-GCM</strong></li>
+      </ul>
+
+      <h3>Server Data</h3>
+      <ul>
+        <li>Discord Server ID for servers where EzraAI is present</li>
+        <li>Server configuration settings (AI personality, log channel, welcome channel)</li>
+        <li>Custom server facts and memories added by server administrators</li>
+        <li>Premium status of the server if applicable</li>
+      </ul>
+
+      <h3>What We Do Not Collect</h3>
+      <ul>
+        <li>Full message content — we do not log or store every message sent in a server</li>
+        <li>Voice data, images, or files shared in Discord</li>
+        <li>Email addresses, real names, or any off-platform personal information</li>
+        <li>IP addresses or device identifiers</li>
+        <li>Payment information of any kind</li>
+      </ul>
+    </section>
+
+    <section id="s2b">
+      <div class="sec-num">Section 02b</div>
+      <h2>End-to-End Encryption</h2>
+      <p>As of June 2026, EzraAI encrypts sensitive personal data at rest using <strong>AES-256-GCM</strong>, an authenticated encryption standard. This protects your conversation history, memory, and sentiment data so that even a database breach cannot expose readable content without the master secret, which is held only on our server infrastructure.</p>
+
+      <h3>Technical details</h3>
+      <ul>
+        <li>Algorithm: AES-256-GCM with 128-bit authentication tag (tamper-proof)</li>
+        <li>Per-user key derived via PBKDF2 (100,000 rounds, SHA-512) — each user's key is unique</li>
+        <li>Random 96-bit IV per encryption operation — no two ciphertexts are alike</li>
+        <li>Master secret stored only as a server environment variable, never in the database</li>
+        <li>All connections to the database and AI providers use TLS 1.2+ (data encrypted in transit too)</li>
+      </ul>
+
+      <h3>What encryption does and does not cover</h3>
+      <ul>
+        <li>Encrypted: conversation history, personal memory, sentiment history</li>
+        <li>Plaintext (by design): XP, coins, level, aura, badges — required for leaderboards and dashboards to work</li>
+        <li>When generating a reply, your history is temporarily decrypted in-memory and discarded immediately after — it is never written to disk or logs in decrypted form</li>
+      </ul>
+
+      <div class="callout">
+        <p>Deleting your data (Section 7) also invalidates your unique derived encryption key, making any residual encrypted records permanently unreadable even if they were to persist in backups.</p>
+      </div>
+
+    <section id="s3">
+      <div class="sec-num">Section 03</div>
+      <h2>How We Use Your Data</h2>
+      <p>Data collected by EzraAI is used exclusively to operate and improve the bot's features:</p>
+      <ul>
+        <li>To track XP, levels, coins, and economy progress across sessions</li>
+        <li>To power AI conversation memory so the bot can remember context you share</li>
+        <li>To manage leaderboards, streaks, and achievements</li>
+        <li>To process top.gg votes and reward voters</li>
+        <li>To deliver reminders you have set</li>
+        <li>To enforce server-level and global moderation actions</li>
+        <li>To provide premium features to qualifying users and servers</li>
+        <li>To generate anonymised usage statistics for bot improvement</li>
+      </ul>
+      <p>We do not use your data for advertising, profiling, or any commercial purpose beyond providing the bot's services.</p>
+    </section>
+
+    <section id="s4">
+      <div class="sec-num">Section 04</div>
+      <h2>Data Storage &amp; Security</h2>
+      <p>All user and server data is stored in a <strong>Turso</strong> (libSQL) database hosted on secure cloud infrastructure. Sensitive fields — conversation history, memory, and sentiment data — are encrypted with AES-256-GCM before being written to the database, as described in Section 2b. All connections are transmitted over TLS-encrypted connections. Access to the database is restricted to the bot operator and trusted administrators.</p>
+      <div class="callout">
+        <p>We implement industry-standard technical and organisational measures to protect your data, including end-to-end encryption for personal conversation data. No system is completely immune to security risks. Use of Discord itself is subject to Discord's own Privacy Policy.</p>
+      </div>
+      <p>Data is stored for as long as you or your server continues to use EzraAI, or until a deletion request is made (see Section 7).</p>
+    </section>
+
+    <section id="s5">
+      <div class="sec-num">Section 05</div>
+      <h2>Third Party Services</h2>
+      <p>EzraAI interacts with the following third-party services to provide its features:</p>
+      <ul>
+        <li><strong>Discord</strong> — the platform through which all interactions occur. Subject to Discord's Privacy Policy at discord.com/privacy.</li>
+        <li><strong>Mistral AI</strong> — primary AI provider used to generate responses. Messages that trigger AI replies are processed through Mistral's API.</li>
+        <li><strong>Groq</strong> — used for fast AI inference on select models. Message content is transmitted to Groq's API for those models.</li>
+        <li><strong>Anthropic (Claude)</strong> — used for advanced AI tasks on Max tier. Applicable message content is processed through Anthropic's API.</li>
+        <li><strong>Turso</strong> — our database provider. Data stored in Turso is encrypted at rest with AES-256-GCM as described in Section 2b.</li>
+        <li><strong>HuggingFace</strong> — used for AI image generation. Image prompts are sent to HuggingFace's API.</li>
+        <li><strong>Brave / Tavily / DuckDuckGo</strong> — used for web search features available on Pro/Max tier. Search queries are transmitted to these providers.</li>
+        <li><strong>top.gg</strong> — used to receive vote notifications. Your Discord User ID is shared with top.gg when you vote.</li>
+      </ul>
+      <p>We do not control, and are not responsible for, the privacy practices of these third-party services.</p>
+    </section>
+
+    <section id="s6">
+      <div class="sec-num">Section 06</div>
+      <h2>Data Retention</h2>
+      <p>Your data is retained for as long as your account is active or the bot is present in your server. Specifically:</p>
+      <ul>
+        <li>User data persists indefinitely unless you request deletion</li>
+        <li>AI conversation memory and history is stored until you clear it via bot commands or request deletion — it is encrypted at rest at all times</li>
+        <li>Sentiment history is automatically pruned after 14 days</li>
+        <li>Vote timestamps older than 30 days are automatically pruned to maintain rolling monthly counts</li>
+        <li>Server data is retained while the bot remains in the server; if the bot is removed, server configuration data may persist for up to 90 days before automated cleanup</li>
+        <li>Deleting your account data also invalidates your unique derived encryption key — any residual encrypted data becomes permanently unreadable</li>
+      </ul>
+    </section>
+
+    <section id="s7">
+      <div class="sec-num">Section 07</div>
+      <h2>Your Rights</h2>
+      <p>Depending on your jurisdiction, you may have certain rights regarding your personal data. Regardless of location, we honour the following requests:</p>
+      <ul>
+        <li><strong>Access</strong> — you may request a summary of the data we hold about you</li>
+        <li><strong>Correction</strong> — you may request correction of inaccurate data</li>
+        <li><strong>Deletion</strong> — you may request complete deletion of all data associated with your Discord User ID</li>
+        <li><strong>Memory clearing</strong> — you can clear your AI memory at any time using the bot's built-in commands</li>
+      </ul>
+      <p>To exercise any of these rights, contact us via the support server or the email address listed in Section 10. Deletion requests will be processed within 30 days.</p>
+    </section>
+
+    <section id="s8">
+      <div class="sec-num">Section 08</div>
+      <h2>Children's Privacy</h2>
+      <p>EzraAI is not directed at children under the age of 13, in accordance with Discord's own minimum age requirements. We do not knowingly collect personal data from users under 13 years of age. Discord prohibits use of its platform by those under 13, and by extension, EzraAI is bound by those same conditions.</p>
+      <p>If you believe a child under 13 has interacted with EzraAI and provided data, please contact us immediately for prompt deletion.</p>
+    </section>
+
+    <section id="s9">
+      <div class="sec-num">Section 09</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the bot's features, applicable law, or our data practices. When we make significant changes, we will update the "Last updated" date at the top of this document.</p>
+      <p>Continued use of EzraAI after any changes constitutes acceptance of the updated policy. We encourage you to review this page periodically.</p>
+    </section>
+
+    <section id="s10">
+      <div class="sec-num">Section 10</div>
+      <h2>Contact</h2>
+      <p>If you have questions about this Privacy Policy, wish to exercise your data rights, or want to report a privacy concern, please reach out through:</p>
+      <ul>
+        <li>The official EzraAI Discord support server</li>
+        <li>Contacting the bot owner directly via Discord</li>
+      </ul>
+      <p>We will respond to all valid privacy enquiries within 14 business days.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-copy">
+    &copy; <strong>2026 EzraAI</strong>. All rights reserved.
+  </div>
+  <nav class="footer-links">
+    <a href='/privacy-policy'>Privacy Policy</a>
+    <a href='/terms-of-service'>Terms of Service</a>
+  </nav>
+</footer>
+
+</body>
+</html>
