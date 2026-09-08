@@ -1,0 +1,510 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — EzraAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #1a1a1a;
+    --soft:    #4a4a4a;
+    --muted:   #888;
+    --line:    #e8e4df;
+    --bg:      #faf8f5;
+    --white:   #ffffff;
+    --accent:  #3d2d5a;
+    --serif:   'Fraunces', Georgia, serif;
+    --sans:    'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 0 48px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .brand span { color: var(--accent); }
+  .toplinks { display: flex; gap: 32px; }
+  .toplinks a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color .2s;
+  }
+  .toplinks a:hover, .toplinks a.active { color: var(--accent); }
+
+  .hero {
+    border-bottom: 1px solid var(--line);
+    padding: 72px 48px 60px;
+    background: var(--white);
+  }
+  .hero-inner { max-width: 720px; }
+  .doc-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-meta {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta span::before { content: '—'; margin-right: 8px; color: var(--line); }
+
+  .layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .sidebar { position: sticky; top: 84px; }
+  .sidebar-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .toc { list-style: none; }
+  .toc li { margin-bottom: 2px; }
+  .toc a {
+    font-size: 13px;
+    color: var(--soft);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0 6px 14px;
+    border-left: 2px solid transparent;
+    transition: all .15s;
+    line-height: 1.4;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+
+  .content section {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .content section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+  .sec-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 28px 0 10px;
+  }
+  p { color: var(--soft); margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 0; list-style: none; margin-bottom: 16px; }
+  li {
+    color: var(--soft);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  li:last-child { border-bottom: none; }
+  li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .callout {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .callout p { margin: 0; font-size: 14px; }
+  .callout.warn { border-left-color: #c0392b; }
+  .callout.warn p { color: #c0392b; }
+
+  a { color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 48px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-copy { font-size: 13px; color: var(--muted); }
+  .footer-copy strong { color: var(--ink); font-weight: 500; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media(max-width: 768px) {
+    .topbar { padding: 0 20px; }
+    .hero { padding: 48px 20px 40px; }
+    .layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
+    .sidebar { position: static; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class='brand' href='/'>Ezra<span>AI</span></a>
+  <nav class="toplinks">
+    <a href='/privacy-policy'>Privacy</a>
+    <a class='active' href='/terms-of-service'>Terms</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="doc-label">Legal Document</div>
+    <h1>Terms of <em>Service</em></h1>
+    <div class="hero-meta">
+      <span>Effective: January 1, 2025</span>
+      <span>Last updated: June 2026</span>
+      <span>EzraAI Discord Bot</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-label">Contents</div>
+    <ul class="toc">
+      <li><a href="#s1">1. Agreement</a></li>
+      <li><a href="#s2">2. Eligibility</a></li>
+      <li><a href="#s3">3. Permitted Use</a></li>
+      <li><a href="#s4">4. Prohibited Conduct</a></li>
+      <li><a href="#s5">5. AI Features</a></li>
+      <li><a href="#s5b">5b. End-to-End Encryption</a></li>
+      <li><a href="#s6">6. Economy &amp; Premium</a></li>
+      <li><a href="#s7">7. Moderation</a></li>
+      <li><a href="#s8">8. Availability</a></li>
+      <li><a href="#s9">9. Intellectual Property</a></li>
+      <li><a href="#s10">10. Disclaimer</a></li>
+      <li><a href="#s11">11. Limitation of Liability</a></li>
+      <li><a href="#s12">12. Termination</a></li>
+      <li><a href="#s13">13. Changes</a></li>
+      <li><a href="#s14">14. Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="s1">
+      <div class="sec-num">Section 01</div>
+      <h2>Agreement to Terms</h2>
+      <p>These Terms of Service ("Terms") govern your access to and use of EzraAI ("the Bot", "we", "our"), a Discord bot providing AI conversation, economy, leveling, and utility services. By using EzraAI in any capacity — sending messages it responds to, using its commands, or adding it to a Discord server — you agree to be bound by these Terms.</p>
+      <p>These Terms apply alongside Discord's own Terms of Service. In the event of a conflict, Discord's Terms take precedence on matters relating to the Discord platform itself.</p>
+      <div class="callout">
+        <p>If you do not agree to these Terms, please do not use EzraAI. You may request removal of your data by contacting us as described in Section 14.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <div class="sec-num">Section 02</div>
+      <h2>Eligibility</h2>
+      <p>To use EzraAI you must:</p>
+      <ul>
+        <li>Be at least 13 years of age, in compliance with Discord's minimum age requirement</li>
+        <li>Have a valid Discord account in good standing</li>
+        <li>Comply with all applicable laws in your jurisdiction</li>
+        <li>Not have been previously banned from using EzraAI</li>
+      </ul>
+      <p>Server administrators who add EzraAI to their servers additionally represent that they have the authority to add bots to that server and agree to be responsible for how the bot is used within their community.</p>
+    </section>
+
+    <section id="s3">
+      <div class="sec-num">Section 03</div>
+      <h2>Permitted Use</h2>
+      <p>EzraAI is provided for lawful, personal, and community use on the Discord platform. You are permitted to:</p>
+      <ul>
+        <li>Use all bot commands in accordance with their intended purpose</li>
+        <li>Interact with the AI conversation features for personal, creative, or entertainment purposes</li>
+        <li>Earn and use in-bot economy items such as coins, XP, and levels</li>
+        <li>Vote for the bot on top.gg to receive rewards</li>
+        <li>Configure the bot for your server if you hold the necessary Discord permissions</li>
+        <li>Participate in leaderboards, streaks, referrals, and other engagement features</li>
+      </ul>
+    </section>
+
+    <section id="s4">
+      <div class="sec-num">Section 04</div>
+      <h2>Prohibited Conduct</h2>
+      <p>The following activities are strictly prohibited and may result in immediate and permanent suspension from EzraAI without notice:</p>
+
+      <h3>Abuse &amp; Exploitation</h3>
+      <ul>
+        <li>Attempting to exploit, hack, or manipulate the bot's economy, XP, or any game system</li>
+        <li>Using automated scripts, macros, or bots to farm coins, XP, votes, or referrals</li>
+        <li>Abusing the referral system with fake or duplicate accounts</li>
+        <li>Attempting to bypass cooldowns or rate limits by any means</li>
+      </ul>
+
+      <h3>Harmful &amp; Illegal Use</h3>
+      <ul>
+        <li>Using AI features to generate harmful, illegal, hateful, violent, or sexually explicit content</li>
+        <li>Attempting to manipulate the AI into bypassing its content guidelines</li>
+        <li>Using the bot to harass, threaten, or harm other users</li>
+        <li>Sharing or distributing any output from the bot that violates applicable law</li>
+        <li>Using the bot for any form of fraud, scam, or deception</li>
+      </ul>
+
+      <h3>System Interference</h3>
+      <ul>
+        <li>Attempting to access, reverse-engineer, or replicate the bot's code or infrastructure</li>
+        <li>Attempting to probe, extract, or circumvent the bot's encryption systems or master secret</li>
+        <li>Sending excessive requests with intent to degrade bot performance (rate flooding)</li>
+        <li>Attempting to probe or test the bot's security vulnerabilities</li>
+      </ul>
+
+      <div class="callout warn">
+        <p>Violations of these prohibited conduct rules will result in permanent blacklisting from EzraAI. Economy items and progress associated with a banned account are forfeited and will not be restored.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <div class="sec-num">Section 05</div>
+      <h2>AI Conversation Features</h2>
+      <p>EzraAI uses multiple AI providers — including Mistral AI, Groq, and Anthropic (Claude) — to generate conversational responses depending on your tier and selected model. By using the AI features you acknowledge:</p>
+      <ul>
+        <li>AI responses are generated automatically and may not always be accurate, appropriate, or complete</li>
+        <li>You should not rely on AI responses for medical, legal, financial, or safety-critical decisions</li>
+        <li>Conversation memory you enable may persist until you clear it — be mindful of what personal information you share</li>
+        <li>We may review interactions to improve the service or investigate abuse reports</li>
+        <li>AI feature availability may be limited or throttled to maintain service stability</li>
+      </ul>
+      <p>We are not responsible for any decisions made based on content generated by the AI features.</p>
+    </section>
+
+    <section id="s5b">
+      <div class="sec-num">Section 05b</div>
+      <h2>End-to-End Encryption</h2>
+      <p>As of June 2026, EzraAI encrypts sensitive personal data stored in our database using <strong>AES-256-GCM end-to-end encryption</strong>. This means your conversation history and personal memories are encrypted before they are written to storage, and remain unreadable to anyone who does not hold the master decryption secret — including in the event of a database breach.</p>
+
+      <h3>What is encrypted</h3>
+      <ul>
+        <li>Your full conversation history with EzraAI (per server and in DMs)</li>
+        <li>Personal memory facts you share with the bot (e.g. your name, preferences)</li>
+        <li>Your sentiment history used for wellbeing and vibe features</li>
+      </ul>
+
+      <h3>What is not encrypted</h3>
+      <ul>
+        <li>Economy data such as XP, coins, level, aura, and badges — these remain plaintext so leaderboards and dashboards function correctly</li>
+        <li>Server configuration settings — these contain no personal conversation content</li>
+        <li>Your Discord User ID — this is used as an identifier and cannot be encrypted</li>
+      </ul>
+
+      <h3>How it works</h3>
+      <p>A unique 256-bit encryption key is derived for each individual user using PBKDF2 (100,000 iterations, SHA-512) from a master secret stored exclusively as a server environment variable — it is never written to the database. Each encryption operation uses a random 96-bit IV and produces a 128-bit GCM authentication tag, ensuring both confidentiality and tamper-detection.</p>
+
+      <div class="callout">
+        <p>When EzraAI generates a reply, your conversation history is temporarily decrypted in-memory on our server. This is necessary to provide the Service. Decrypted content is never written to disk or logs and is discarded immediately after the reply is sent.</p>
+      </div>
+
+      <h3>Security implications for you</h3>
+      <ul>
+        <li>If our database were ever compromised, your conversation history and memories would be unreadable without the master secret</li>
+        <li>Each user's key is derived independently — a breach affecting one user cannot be used to decrypt another user's data</li>
+        <li>Requesting deletion of your data also invalidates your derived key, making any residual encrypted data permanently unreadable</li>
+        <li>Attempting to probe, extract, or circumvent the encryption system is a violation of Section 4 and will result in a permanent ban</li>
+      </ul>
+    </section>
+
+    <section id="s6">
+      <div class="sec-num">Section 06</div>
+      <h2>Economy System &amp; Premium</h2>
+
+      <h3>Virtual Economy</h3>
+      <p>Coins, XP, levels, aura, and all other in-bot economy items are virtual, have no real-world monetary value, and cannot be exchanged for real currency, goods, or services. We reserve the right to adjust, reset, or remove economy balances at any time for any reason, including to correct exploits or rebalance the system.</p>
+
+      <h3>Premium Services</h3>
+      <p>EzraAI may offer premium features or subscriptions. Where applicable:</p>
+      <ul>
+        <li>Premium access is granted at our sole discretion and may be revoked for Terms violations</li>
+        <li>All purchases, if any, are handled through agreed third-party payment processors</li>
+        <li>Premium features are provided "as-is" with no uptime guarantee</li>
+        <li>Refunds, where applicable, are subject to the refund policy communicated at time of purchase</li>
+      </ul>
+    </section>
+
+    <section id="s7">
+      <div class="sec-num">Section 07</div>
+      <h2>Moderation &amp; Enforcement</h2>
+      <p>We reserve the right to take any of the following actions against users or servers that violate these Terms, at our sole discretion and without prior notice:</p>
+      <ul>
+        <li>Issue warnings recorded against your account</li>
+        <li>Temporarily restrict access to specific bot features</li>
+        <li>Permanently blacklist a Discord User ID from all EzraAI functionality</li>
+        <li>Permanently blacklist a Discord Server ID, disabling bot functionality for all members</li>
+        <li>Remove the bot from a server</li>
+      </ul>
+      <p>Moderation decisions are final. Appeal requests may be submitted through the official support server but are not guaranteed to be reviewed.</p>
+    </section>
+
+    <section id="s8">
+      <div class="sec-num">Section 08</div>
+      <h2>Service Availability</h2>
+      <p>EzraAI is provided on a best-effort basis. We do not guarantee uninterrupted, error-free, or timely operation of the bot. The service may be temporarily unavailable due to:</p>
+      <ul>
+        <li>Scheduled or unscheduled maintenance</li>
+        <li>Discord platform outages or API changes</li>
+        <li>Third-party service disruptions (AI providers, Turso database, hosting provider)</li>
+        <li>Unforeseen technical issues</li>
+      </ul>
+      <p>We are not liable for any loss of data, economy progress, or other impact caused by service downtime.</p>
+    </section>
+
+    <section id="s9">
+      <div class="sec-num">Section 09</div>
+      <h2>Intellectual Property</h2>
+      <p>All aspects of EzraAI — including but not limited to its name, design, code, personality, features, and documentation — are the intellectual property of the bot's owner and developer.</p>
+      <ul>
+        <li>You may not copy, reproduce, distribute, or create derivative works from EzraAI's code or design without explicit written permission</li>
+        <li>You may not claim ownership of EzraAI or represent the bot as your own creation</li>
+        <li>Any content you provide to the bot (such as server facts or AI prompts) remains your own; by providing it you grant us a limited licence to store and process it for bot functionality</li>
+      </ul>
+      <p>EzraAI is an independent project and is not affiliated with, endorsed by, or sponsored by Discord Inc., Mistral AI, or any other third party mentioned in these documents.</p>
+    </section>
+
+    <section id="s10">
+      <div class="sec-num">Section 10</div>
+      <h2>Disclaimer of Warranties</h2>
+      <p>EzraAI is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied. To the fullest extent permitted by applicable law, we disclaim all warranties including but not limited to:</p>
+      <ul>
+        <li>Implied warranties of merchantability or fitness for a particular purpose</li>
+        <li>Warranties that the service will be uninterrupted, timely, or error-free</li>
+        <li>Warranties regarding the accuracy or reliability of AI-generated responses</li>
+        <li>Warranties that defects will be corrected</li>
+        <li>Warranties that encryption will prevent all possible data breaches</li>
+      </ul>
+    </section>
+
+    <section id="s11">
+      <div class="sec-num">Section 11</div>
+      <h2>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, EzraAI and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use or inability to use the service.</p>
+      <p>This includes, without limitation: loss of data, loss of virtual economy items, loss of revenue, or any harm resulting from reliance on AI-generated content. In all cases, our maximum liability to you shall not exceed the amount you paid us in the 12 months preceding the claim — which in the case of the free bot service is zero.</p>
+    </section>
+
+    <section id="s12">
+      <div class="sec-num">Section 12</div>
+      <h2>Termination</h2>
+      <p>We may terminate or suspend your access to EzraAI at any time, with or without notice, for any violation of these Terms or for any other reason at our sole discretion.</p>
+      <p>You may stop using EzraAI at any time. To request deletion of your data upon cessation of use, contact us as described in Section 14.</p>
+      <p>Provisions of these Terms which by their nature should survive termination shall survive, including Sections 9 (Intellectual Property), 10 (Disclaimers), and 11 (Limitation of Liability).</p>
+    </section>
+
+    <section id="s13">
+      <div class="sec-num">Section 13</div>
+      <h2>Changes to These Terms</h2>
+      <p>We reserve the right to modify these Terms at any time. Material changes will be communicated through the official EzraAI support server or by updating the "Last updated" date on this page. Continued use of EzraAI after changes are posted constitutes acceptance of the revised Terms.</p>
+    </section>
+
+    <section id="s14">
+      <div class="sec-num">Section 14</div>
+      <h2>Contact</h2>
+      <p>For questions about these Terms, to report a violation, or to submit a data request, please contact us through:</p>
+      <ul>
+        <li>The official EzraAI Discord support server</li>
+        <li>Direct message to the bot owner on Discord</li>
+      </ul>
+      <p>We aim to respond to all enquiries within 14 business days.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-copy">
+    &copy; <strong>2026 EzraAI</strong>. All rights reserved. Unauthorised reproduction of this document is prohibited.
+  </div>
+  <nav class="footer-links">
+    <a href='/privacy-policy'>Privacy Policy</a>
+    <a href='/terms-of-service'>Terms of Service</a>
+  </nav>
+</footer>
+
+</body>
+</html>
